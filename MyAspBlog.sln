@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31515.178
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyAspBlog.WebApi", "MyAspBlog.WebApi\MyAspBlog.WebApi.csproj", "{075F7D9A-0985-40C5-9634-F66603F8CE62}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyAspBlog.Model", "MyAspBlog.Model\MyAspBlog.Model.csproj", "{7BB34AF5-5E09-47D4-A186-7600772F2982}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{075F7D9A-0985-40C5-9634-F66603F8CE62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{075F7D9A-0985-40C5-9634-F66603F8CE62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{075F7D9A-0985-40C5-9634-F66603F8CE62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{075F7D9A-0985-40C5-9634-F66603F8CE62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BB34AF5-5E09-47D4-A186-7600772F2982}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BB34AF5-5E09-47D4-A186-7600772F2982}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BB34AF5-5E09-47D4-A186-7600772F2982}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BB34AF5-5E09-47D4-A186-7600772F2982}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E68F8F4D-2068-4DCA-B364-15EC20C556E9}
+	EndGlobalSection
+EndGlobal
