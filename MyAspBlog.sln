@@ -3,9 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31515.178
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyAspBlog.WebApi", "MyAspBlog.WebApi\MyAspBlog.WebApi.csproj", "{075F7D9A-0985-40C5-9634-F66603F8CE62}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyAspBlog.WebApi", "MyAspBlog.WebApi\MyAspBlog.WebApi.csproj", "{075F7D9A-0985-40C5-9634-F66603F8CE62}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyAspBlog.Model", "MyAspBlog.Model\MyAspBlog.Model.csproj", "{7BB34AF5-5E09-47D4-A186-7600772F2982}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyAspBlog.Model", "MyAspBlog.Model\MyAspBlog.Model.csproj", "{7BB34AF5-5E09-47D4-A186-7600772F2982}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Repository", "Repository", "{87AB7977-75F9-4CF9-8DD9-B77C845FE3CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyAspBlog.IRepository", "MyAspBlog.IRepository\MyAspBlog.IRepository.csproj", "{9E66070A-A8EA-44D9-97F5-1355C109DB20}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyAspBlog.Repository", "MyAspBlog.Repository\MyAspBlog.Repository.csproj", "{8A52E762-0C00-47F0-A1AD-6099148C9903}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Service", "Service", "{DFC46126-B58D-42A2-A896-C6A8AC178416}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyAspBlog.IService", "MyAspBlog.IService\MyAspBlog.IService.csproj", "{E3144E5F-7A5F-4076-9657-56581B0E85B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyAspBlog.Service", "MyAspBlog.Service\MyAspBlog.Service.csproj", "{E6FBE999-7EEF-4948-85D1-516DD7EA13ED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,9 +33,31 @@ Global
 		{7BB34AF5-5E09-47D4-A186-7600772F2982}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7BB34AF5-5E09-47D4-A186-7600772F2982}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7BB34AF5-5E09-47D4-A186-7600772F2982}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E66070A-A8EA-44D9-97F5-1355C109DB20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E66070A-A8EA-44D9-97F5-1355C109DB20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E66070A-A8EA-44D9-97F5-1355C109DB20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E66070A-A8EA-44D9-97F5-1355C109DB20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A52E762-0C00-47F0-A1AD-6099148C9903}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A52E762-0C00-47F0-A1AD-6099148C9903}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A52E762-0C00-47F0-A1AD-6099148C9903}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A52E762-0C00-47F0-A1AD-6099148C9903}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3144E5F-7A5F-4076-9657-56581B0E85B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3144E5F-7A5F-4076-9657-56581B0E85B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3144E5F-7A5F-4076-9657-56581B0E85B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3144E5F-7A5F-4076-9657-56581B0E85B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6FBE999-7EEF-4948-85D1-516DD7EA13ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6FBE999-7EEF-4948-85D1-516DD7EA13ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6FBE999-7EEF-4948-85D1-516DD7EA13ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6FBE999-7EEF-4948-85D1-516DD7EA13ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9E66070A-A8EA-44D9-97F5-1355C109DB20} = {87AB7977-75F9-4CF9-8DD9-B77C845FE3CE}
+		{8A52E762-0C00-47F0-A1AD-6099148C9903} = {87AB7977-75F9-4CF9-8DD9-B77C845FE3CE}
+		{E3144E5F-7A5F-4076-9657-56581B0E85B1} = {DFC46126-B58D-42A2-A896-C6A8AC178416}
+		{E6FBE999-7EEF-4948-85D1-516DD7EA13ED} = {DFC46126-B58D-42A2-A896-C6A8AC178416}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E68F8F4D-2068-4DCA-B364-15EC20C556E9}

@@ -1,15 +1,14 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using MyAspBlog.IRepository;
+using MyAspBlog.IService;
+using MyAspBlog.Repository;
+using MyAspBlog.Service;
+using SqlSugar.IOC;
 
 namespace MyAspBlog.WebApi
 {
@@ -31,6 +30,18 @@ namespace MyAspBlog.WebApi
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "MyAspBlog.WebApi", Version = "v1" });
             });
+
+            #region SqlSugarIOC 
+            SugarIocServices.AddSqlSugar(new IocConfig()
+            {
+                ConnectionString = this.Configuration["SqlConn"],
+                DbType = IocDbType.SqlServer,
+                IsAutoCloseConnection = true//×Ô¶¯ÊÍ·Å
+            });
+            #endregion
+            #region IOC
+            services.AddCustomedIOC();
+            #endregion
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -51,6 +62,22 @@ namespace MyAspBlog.WebApi
             {
                 endpoints.MapControllers();
             });
+        }
+    }
+    static class IOCExtend
+    {
+        public static IServiceCollection AddCustomedIOC(this IServiceCollection services)
+        {
+            services.AddScoped<IBlogNewsRepository, BlogNewsRepository>();
+            services.AddScoped<IBlogNewsService, BlogNewsService>();
+
+            services.AddScoped<IAuthorInfoRepository, AuthorInfoRepository>();
+            services.AddScoped<IAuthorInfoService, AuthorInfoService>();
+
+            services.AddScoped<ITypeInfoRepository, TypeInfoRepository>();
+            services.AddScoped<ITypeInfoService, TypeInfoService>();
+
+            return services;
         }
     }
 }

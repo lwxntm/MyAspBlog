@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MyAspBlog.IRepository\MyAspBlog.IRepository.csproj" />
+    <ProjectReference Include="..\MyAspBlog.IService\MyAspBlog.IService.csproj" />
+  </ItemGroup>
+
+</Project>
