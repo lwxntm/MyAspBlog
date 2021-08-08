@@ -8,6 +8,7 @@ namespace MyAspBlog.WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    // [Authorize]
     public class BlogNewsController : ControllerBase
     {
         private readonly IBlogNewsService _iBlogNewsService;
@@ -55,12 +56,12 @@ namespace MyAspBlog.WebApi.Controllers
         [HttpPut("Edit")]
         public async Task<ActionResult<ApiResult>> Edit(int id, string title, string content, int typeid)
         {
-            BlogNews blogNews =await _iBlogNewsService.FindAsync(id);
+            BlogNews blogNews = await _iBlogNewsService.FindAsync(id);
             if (blogNews == null) return ApiResultHelper.Error("未找到该文章");
             blogNews.Title = title;
             blogNews.Content = content;
             blogNews.TypeId = typeid;
-            bool b =await _iBlogNewsService.EditAsync(blogNews);
+            bool b = await _iBlogNewsService.EditAsync(blogNews);
             if (!b) return ApiResultHelper.Error("修改失败，服务器错误");
             return ApiResultHelper.Success(blogNews);
         }

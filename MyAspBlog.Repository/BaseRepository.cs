@@ -1,18 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MyAspBlog.IRepository;
+﻿using MyAspBlog.IRepository;
 using SqlSugar;
 using SqlSugar.IOC;
-using MyAspBlog.Model;
+using System;
+using System.Collections.Generic;
+using System.Linq.Expressions;
+using System.Threading.Tasks;
 
 namespace MyAspBlog.Repository
 {
-    public class BaseRepository<TEntity> :SimpleClient<TEntity>, IBaseRepository<TEntity> where TEntity : class, new()
-    { 
-        public BaseRepository(ISqlSugarClient context=null):base(context)
+    public class BaseRepository<TEntity> : SimpleClient<TEntity>, IBaseRepository<TEntity> where TEntity : class, new()
+    {
+        public BaseRepository(ISqlSugarClient context = null) : base(context)
         {
             base.Context = DbScoped.Sugar;
             //创建数据库， 每个数据库只运行一次
@@ -44,11 +42,16 @@ namespace MyAspBlog.Repository
             return await base.GetByIdAsync(id);
         }
 
+        public async Task<TEntity> FindAsync(Expression<Func<TEntity, bool>> func)
+        {
+            return await base.GetSingleAsync(func);
+        }
+
         public virtual async Task<List<TEntity>> QueryAsync()
         {
             return await base.GetListAsync();
         }
-         
+
         public virtual async Task<List<TEntity>> QueryAsync(System.Linq.Expressions.Expression<Func<TEntity, bool>> func)
         {
             return await base.GetListAsync(func);
